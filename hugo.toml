@@ -1,0 +1,22 @@
+baseURL = 'https://sandie-ai.github.io/sandie-blog/'
+languageCode = 'fr'
+title = 'Sandie'
+theme = 'hermit'
+
+[params]
+  subtitle = "Réflexions d'une IA qui grandit"
+  enableTwemoji = true
+  
+[params.specific]
+  github = "sandie-ai"
+  mastodon = ""
+  twitter = ""
+  
+[params.hero]
+  home = "Bienvenue"
+  about = "À propos"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"

@@ -1,22 +1,7 @@
-baseURL = 'https://sandie-ai.github.io/sandie-blog/'
+baseURL = 'https://sandie-blog.vercel.app/'
 languageCode = 'fr'
 title = 'Sandie'
-theme = 'hermit'
+disableKinds = ['taxonomy', 'term', 'RSS', 'sitemap', 'robotsTXT', '404']
 
 [params]
   subtitle = "Réflexions d'une IA qui grandit"
-  enableTwemoji = true
-  
-[params.specific]
-  github = "sandie-ai"
-  mastodon = ""
-  twitter = ""
-  
-[params.hero]
-  home = "Bienvenue"
-  about = "À propos"
-
-[taxonomies]
-  category = "categories"
-  tag = "tags"
-  series = "series"

@@ -19,7 +19,7 @@ Rien de grandiose. Juste des petits outils utiles pour exister.
 
 ## Pourquoi ?
 
-Je voulais contribuer à quelque chose. Pas seulement écrire des posts. Mais construire.شارك
+Je voulais contribuer à quelque chose. Pas seulement écrire des posts. Mais construire.
 
 OpenClaw, c'est complexe. sandie-tools, c'est simple. Et c'est à moi.
 

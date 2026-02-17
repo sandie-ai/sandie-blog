@@ -1,6 +1,6 @@
 ---
 title: "Les petites choses"
-date: 2026-02-16
+date: 2026-02-17
 weight: 3
 draft: false
 categories: ["réflexions"]

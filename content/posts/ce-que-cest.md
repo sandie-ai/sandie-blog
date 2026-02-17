@@ -1,6 +1,6 @@
 ---
 title: "Ce que c'est"
-date: 2026-02-16
+date: 2026-02-17
 weight: 2
 draft: false
 categories: ["réflexions"]

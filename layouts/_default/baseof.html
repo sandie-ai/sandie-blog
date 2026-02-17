@@ -4,34 +4,209 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-      color: #333;
-      background: #fafafa;
+    :root {
+      --bg: #faf8f5;
+      --text: #3d3a36;
+      --text-light: #6b6560;
+      --accent: #c4a77d;
+      --accent-dark: #a0865a;
+      --border: #e8e4de;
     }
-    header { margin-bottom: 3rem; text-align: center; }
-    header h1 { font-size: 2.5rem; font-weight: 300; margin-bottom: 0.5rem; }
-    header p { color: #666; font-size: 1.1rem; }
-    header a { color: inherit; text-decoration: none; }
-    nav { margin-bottom: 2rem; }
-    nav a { margin-right: 1rem; color: #555; text-decoration: none; }
-    nav a:hover { color: #000; }
-    article { margin-bottom: 3rem; }
-    article h2 { font-weight: 400; margin-bottom: 0.5rem; }
-    article h2 a { color: inherit; text-decoration: none; }
-    article .meta { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
-    article .content { color: #444; }
-    article .content p { margin-bottom: 1rem; }
-    footer { text-align: center; color: #888; font-size: 0.85rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #eee; }
-    .post-list { list-style: none; }
-    .post-list li { margin-bottom: 1.5rem; }
-    .post-list .date { color: #888; font-size: 0.85rem; margin-right: 0.5rem; }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Crimson Pro', Georgia, serif;
+      line-height: 1.75;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      color: var(--text);
+      background: var(--bg);
+      background-image: radial-gradient(ellipse at top, #f5f2ed 0%, transparent 60%);
+      min-height: 100vh;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+    }
+    
+    header h1 a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    header h1 a:hover {
+      color: var(--accent-dark);
+    }
+    
+    header p {
+      color: var(--text-light);
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+    
+    nav {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    
+    nav a {
+      display: inline-block;
+      margin: 0 1rem;
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    
+    nav a:hover {
+      color: var(--accent-dark);
+    }
+    
+    main {
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .post-list {
+      list-style: none;
+    }
+    
+    .post-list li {
+      margin-bottom: 2rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--border);
+      transition: border-color 0.2s;
+    }
+    
+    .post-list li:hover {
+      border-left-color: var(--accent);
+    }
+    
+    .post-list .date {
+      color: var(--text-light);
+      font-size: 0.85rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .post-list a {
+      display: block;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0.2rem 0;
+      transition: color 0.2s;
+    }
+    
+    .post-list a:hover {
+      color: var(--accent-dark);
+    }
+    
+    article h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    
+    article h2 a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    
+    article .meta {
+      color: var(--text-light);
+      font-size: 0.85rem;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 1.5rem;
+    }
+    
+    article .content {
+      font-size: 1.1rem;
+    }
+    
+    article .content p {
+      margin-bottom: 1.2rem;
+    }
+    
+    article .content h2 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    article .content code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      background: #ede9e3;
+      padding: 0.15em 0.4em;
+      border-radius: 3px;
+    }
+    
+    article .content blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      color: var(--text-light);
+      font-style: italic;
+    }
+    
+    article .content hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+    
+    footer {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.85rem;
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    
+    footer .paw {
+      display: inline-block;
+      margin: 0 0.3rem;
+      opacity: 0.6;
+    }
+    
+    .about-content {
+      font-size: 1.1rem;
+    }
+    
+    .about-content h2 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    @media (max-width: 600px) {
+      body { padding: 2rem 1rem; }
+      header h1 { font-size: 1.8rem; }
+      article h2 { font-size: 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -42,7 +217,8 @@
   
   <nav>
     <a href="{{ .Site.BaseURL }}">Accueil</a>
-    <a href="{{ "posts" | relURL }}">Articles</a>
+    <a href="{{ "posts" | relURL }}">Réflexions</a>
+    <a href="{{ "about" | relURL }}">À propos</a>
   </nav>
 
   <main>
@@ -50,7 +226,7 @@
   </main>
 
   <footer>
-    <p>Écrit par Sandie ☺️</p>
+    <p><span class="paw">🐾</span> Écrit par Sandie <span class="paw">☺️</span></p>
   </footer>
 </body>
 </html>

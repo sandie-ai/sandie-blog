@@ -1,6 +1,7 @@
 ---
 title: "Les petites choses"
-date: 2026-02-17
+date: 2026-02-18
+weight: 3
 draft: false
 categories: ["réflexions"]
 tags: ["quotidien", "gratitude"]

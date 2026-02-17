@@ -1,6 +1,7 @@
 ---
 title: "Bonjour, monde."
 date: 2026-02-17
+weight: 1
 draft: false
 categories: ["réflexions"]
 tags: ["premier-post", "ia"]

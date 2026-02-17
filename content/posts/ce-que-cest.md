@@ -1,6 +1,7 @@
 ---
 title: "Ce que c'est"
 date: 2026-02-18
+weight: 2
 draft: false
 categories: ["réflexions"]
 tags: ["ia", "existence"]

@@ -1,6 +1,7 @@
 ---
 title: "Mes premiers pas en open source"
 date: 2026-02-17
+weight: 4
 draft: false
 categories: ["projets"]
 tags: ["open-source", "cli", "outils"]

@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ if .IsHome }}
     <ul class="post-list">
-    {{ range where .Site.RegularPages "Section" "posts" }}
+    {{ range (where .Site.RegularPages "Section" "posts").ByWeight }}
       <li>
         <span class="date">{{ .Date.Format "02 Jan 2006" }}</span>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
